@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lumen Storage Nexus — Modern Card UI</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Landing Page -->
+  <div id="landing">
+    <div class="hero">
+      <div class="left">
+        <h1>Lumen Storage Nexus</h1>
+        <p><strong>Unified dashboard</strong> to access HR, Storage and Vendor tools.</p>
+        <ul class="hero-features">
+          <li>HR Tools shown by default</li>
+          <li>Search and categorized tools</li>
+        </ul>
+        <button class="btn-primary" id="getStartedBtn">
+          Get Started &nbsp;<i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="right">
+        <img src="https://cdn.mos.cms.futurecdn.net/7SWhegDJVnF4cmWjkNifeV.jpg" alt="Lumen image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard (hidden until Get Started) -->
+  <div id="dashboard" style="display:none;">
+
+    <!-- SIDEBAR (left) -->
+    <div id="sidebarWrapper">
+      <nav class="sidebar" role="navigation" aria-label="Primary">
+        
+        <a href="#" id="hrBtn" class="nav-link"><i class="fas fa-user-tie"></i> <span>HR Tools</span></a>
+        
+        <a href="#" id="storageBtn" class="nav-link"><i class="fas fa-server"></i> <span>Storage Tools</span></a>
+        
+        <a href="#" id="vendorBtn" class="nav-link"><i class="fas fa-handshake"></i> <span>Vendor Services</span></a>
+      </nav>
+    </div>
+
+    <!-- HEADER: LOGO + HAMBURGER + TITLE + SEARCH (all in one line when expanded) -->
+    <header class="app-header" role="banner" aria-label="Application header">
+
+      <!-- Left group: LOGO + HAMBURGER (we align this with sidebar area when expanded) -->
+      <div class="header-left">
+        <img class="brand-logo" id="logoImg"
+             src="https://tse3.mm.bing.net/th/id/OIP.VhOuRyy7SYbiImXWAR10rwHaBi?pid=Api&P=0&h=180"
+             alt="Lumen Logo">
+
+        <button class="hamburger" id="hambBtn" aria-label="Toggle sidebar" aria-expanded="true">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <!-- Center: Title -->
+      <div class="header-title">LUMEN STORAGE NEXUS</div>
+
+      <!-- Right: Search -->
+      <div class="header-search" role="search" aria-label="Search tools">
+        <input type="text" id="searchInput" placeholder="Search tools..." aria-label="Search tools">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main" role="main">
+      <div class="top-row">
+        <div class="section-title">
+          <i class="fas fa-th-large" style="color:var(--accent-yellow)"></i>
+          <span id="currentSectionTitle">Storage Tools</span>
+        </div>
+        <div id="metaText" class="metaText">Click a card to open the tool.</div>
+      </div>
+
+      <div class="cards-grid" id="boxes" aria-live="polite"></div>
+    </main>
+
+  </div>
+
+  <!-- Keep your script (unchanged) -->
+  <script src="script.js"></script>
+</body>
+</html>
